@@ -1,0 +1,29 @@
+{
+    "dagger": {
+        "damage_multiplier": 0.5
+    },
+    "default_sword": {
+        "damage_multiplier": 0.7
+    },
+    "heavy_sword": {
+        "damage_multiplier": 1.0
+    },
+    "lance": {
+        "damage_multiplier": 0.8
+    },
+    "light_longsword": {
+        "damage_multiplier": 0.8
+    },
+    "scythe": {
+        "damage_multiplier": 0.5
+    },
+    "staff": {
+        "damage_multiplier": 0.3
+    },
+    "very_heavy_sword": {
+        "damage_multiplier": 1.2
+    },
+    "wand": {
+        "damage_multiplier": 0.1
+    }
+}

@@ -1,0 +1,1584 @@
+{
+    "pallada_sword": {
+        "type": "unknown",
+        "has_recipe": false
+    },
+    "pireta_sword": {
+        "type": "unknown",
+        "has_recipe": false
+    },
+    "vicious_arxaco_sword": {
+        "type": "unknown",
+        "has_recipe": false
+    },
+    "bone_dagger": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 9,
+        "damage": 3
+    },
+    "chloronite_dagger": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 40080,
+        "damage": 12
+    },
+    "dagger_fang": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 511,
+        "damage": 7
+    },
+    "dagger_of_the_gap": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 66080,
+        "damage": 13
+    },
+    "dagger_with_golden_blade": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 192,
+        "damage": 6
+    },
+    "fish_knife": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 580,
+        "damage": 7
+    },
+    "golden_dagger_fang": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 571,
+        "damage": 7
+    },
+    "golden_ossified_dagger": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 270,
+        "damage": 7
+    },
+    "hunting_cast_iron_knife": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 211,
+        "damage": 6
+    },
+    "longed_cast_iron_dagger": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 351,
+        "damage": 7
+    },
+    "notched_durasteel_dagger": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 2100,
+        "damage": 9
+    },
+    "podlik": {
+        "type": "dagger",
+        "has_recipe": false
+    },
+    "simple_iron_dagger": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 71,
+        "damage": 5
+    },
+    "simple_stone_dagger": {
+        "type": "dagger",
+        "has_recipe": false
+    },
+    "steel_advanced_guard_dagger": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 581,
+        "damage": 7
+    },
+    "vicious_dagger": {
+        "type": "dagger",
+        "has_recipe": false
+    },
+    "vicious_dagger_refined": {
+        "type": "dagger",
+        "has_recipe": true,
+        "raw_cost": 324000,
+        "damage": 14
+    },
+    "adona_sword": {
+        "type": "default_sword",
+        "has_recipe": false
+    },
+    "aluminium_simple_sword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 75,
+        "damage": 5
+    },
+    "blood_waiting": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 1386,
+        "damage": 8
+    },
+    "cast_iron_tooth": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 281,
+        "damage": 7
+    },
+    "chloronite_shortsword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 60080,
+        "damage": 13
+    },
+    "chloronite_shortsword_magik": {
+        "type": "default_sword",
+        "has_recipe": false
+    },
+    "hacksaw": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 581,
+        "damage": 7
+    },
+    "holy_sword": {
+        "type": "default_sword",
+        "has_recipe": false
+    },
+    "plumbum_dark_sword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 160,
+        "damage": 6
+    },
+    "plumbum_saber": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 162,
+        "damage": 6
+    },
+    "plumbum_simple_sword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 123,
+        "damage": 6
+    },
+    "powered_steel_shortsword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 1530,
+        "damage": 9
+    },
+    "powered_steel_wide_shortsword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 766,
+        "damage": 8
+    },
+    "steel_classic_sword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 1276,
+        "damage": 8
+    },
+    "steel_cleaver": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 512,
+        "damage": 7
+    },
+    "steel_dark_shortsword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 790,
+        "damage": 8
+    },
+    "steel_sharp_sword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 511,
+        "damage": 7
+    },
+    "steel_shortsword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 513,
+        "damage": 7
+    },
+    "steel_simple_blade": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 511,
+        "damage": 7
+    },
+    "steel_sword_with_gold_inlay": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 571,
+        "damage": 7
+    },
+    "steel_sword_with_red_guard": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 790,
+        "damage": 8
+    },
+    "steel_tooth": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 1021,
+        "damage": 8
+    },
+    "steel_wide_shortsword": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 766,
+        "damage": 8
+    },
+    "steel_wide_shortsword_with_special_guard": {
+        "type": "default_sword",
+        "has_recipe": true,
+        "raw_cost": 1021,
+        "damage": 8
+    },
+    "tearing_flesh": {
+        "type": "default_sword",
+        "has_recipe": false
+    },
+    "altaite_battlehammer": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 96000,
+        "damage": 13
+    },
+    "bronze_great_battleaxe": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 827,
+        "damage": 8
+    },
+    "cast_iron_board": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 306,
+        "damage": 7
+    },
+    "cast_iron_hammer": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 351,
+        "damage": 7
+    },
+    "copper_heavy_battleaxe": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 120,
+        "damage": 6
+    },
+    "costorub": {
+        "type": "heavy_sword",
+        "has_recipe": false
+    },
+    "dorionite_small_battleaxe": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 60000,
+        "damage": 13
+    },
+    "durasteel_ripper": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 6120,
+        "damage": 10
+    },
+    "full_golden_longsword": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 240,
+        "damage": 6
+    },
+    "iron_default_axe": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 72,
+        "damage": 5
+    },
+    "naginitis_battleaxe": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 60000,
+        "damage": 13
+    },
+    "naginits_and_forfacorite_sword": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 92000,
+        "damage": 13
+    },
+    "netherite_crusher": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 60000,
+        "damage": 13
+    },
+    "netherite_heavy_secyra": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 90000,
+        "damage": 13
+    },
+    "netherite_secyra": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 75000,
+        "damage": 13
+    },
+    "plumbum_full_small_hammer": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 201,
+        "damage": 6
+    },
+    "plumbum_small_hammer": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 82,
+        "damage": 5
+    },
+    "riolik_hammer": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 480,
+        "damage": 7
+    },
+    "riolik_heavy_sword": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 1640,
+        "damage": 9
+    },
+    "rose_crusher": {
+        "type": "heavy_sword",
+        "has_recipe": false
+    },
+    "stone_heavy_crusher": {
+        "type": "heavy_sword",
+        "has_recipe": false
+    },
+    "stone_tomahawk": {
+        "type": "heavy_sword",
+        "has_recipe": false
+    },
+    "tin_heavy_sword": {
+        "type": "heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 400,
+        "damage": 7
+    },
+    "wooden_heavy_crusher": {
+        "type": "heavy_sword",
+        "has_recipe": false
+    },
+    "bronze_lance": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 708,
+        "damage": 8
+    },
+    "cast_iron_alebard": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 283,
+        "damage": 7
+    },
+    "cast_iron_lance": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 142,
+        "damage": 6
+    },
+    "dorionite_lance": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 120000,
+        "damage": 13
+    },
+    "duraluminium_lance": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 1440,
+        "damage": 8
+    },
+    "durasteel_and_aluminium_lance": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 3440,
+        "damage": 9
+    },
+    "durasteel_lance": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 2920,
+        "damage": 9
+    },
+    "durasteel_lance_with_draphorite_inlays": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 92720,
+        "damage": 13
+    },
+    "durasteel_spear": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 1080,
+        "damage": 8
+    },
+    "jagged_lance": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 27990,
+        "damage": 12
+    },
+    "netherite_lance": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 90000,
+        "damage": 13
+    },
+    "netherite_naginata": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 90120,
+        "damage": 13
+    },
+    "spear_with_gold_inlays": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 4320,
+        "damage": 10
+    },
+    "steel_alebard": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 1023,
+        "damage": 8
+    },
+    "steel_lance": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 512,
+        "damage": 7
+    },
+    "steel_spear": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 513,
+        "damage": 7
+    },
+    "vicious_lance": {
+        "type": "lance",
+        "has_recipe": false
+    },
+    "vicious_lance_refined": {
+        "type": "lance",
+        "has_recipe": true,
+        "raw_cost": 365000,
+        "damage": 14
+    },
+    "altaite_saber": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 48000,
+        "damage": 12
+    },
+    "altaite_small_hammer": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 80000,
+        "damage": 13
+    },
+    "aluminium_curved_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 125,
+        "damage": 6
+    },
+    "aluminium_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 100,
+        "damage": 6
+    },
+    "bronze_fang": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 354,
+        "damage": 7
+    },
+    "bronze_heighted_battleaxe": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 709,
+        "damage": 8
+    },
+    "bronze_longed_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 592,
+        "damage": 7
+    },
+    "bronze_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 394,
+        "damage": 7
+    },
+    "bronze_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 276,
+        "damage": 7
+    },
+    "bronze_trident": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 708,
+        "damage": 8
+    },
+    "caryite_heavysword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 45000,
+        "damage": 12
+    },
+    "caryite_saber": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 90000,
+        "damage": 13
+    },
+    "caryite_small_battleaxe": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 90000,
+        "damage": 13
+    },
+    "caryite_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 30001,
+        "damage": 12
+    },
+    "cast_iron_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 421,
+        "damage": 7
+    },
+    "cast_iron_long_saber": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 281,
+        "damage": 7
+    },
+    "copper_sword_hook": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 161,
+        "damage": 6
+    },
+    "dorionite_battleaxe_with_caryite_inlays": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 90000,
+        "damage": 13
+    },
+    "dorionite_double_edged_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 45255,
+        "damage": 12
+    },
+    "dorionite_hammer": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 75255,
+        "damage": 13
+    },
+    "dorionite_long_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 150765,
+        "damage": 14
+    },
+    "dorionite_secyra_with_sapphiers": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 75400,
+        "damage": 13
+    },
+    "duraluminium_battleaxe_with_draphorite_inlays": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 90720,
+        "damage": 13
+    },
+    "duraluminium_great_battleaxe": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1850,
+        "damage": 9
+    },
+    "duraluminium_short_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 90360,
+        "damage": 13
+    },
+    "durasteel_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 5520,
+        "damage": 10
+    },
+    "durasteel_simple_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 2040,
+        "damage": 9
+    },
+    "durasteel_small_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1420,
+        "damage": 8
+    },
+    "durasteel_streight_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 4081,
+        "damage": 10
+    },
+    "durasteel_sword_with_bronze_inlays": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1503,
+        "damage": 8
+    },
+    "durasteel_sword_with_dorionite": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 32720,
+        "damage": 12
+    },
+    "elder_crusher": {
+        "type": "light_longsword",
+        "has_recipe": false
+    },
+    "even": {
+        "type": "light_longsword",
+        "has_recipe": false
+    },
+    "flesh_sword": {
+        "type": "light_longsword",
+        "has_recipe": false
+    },
+    "forfacorite_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 26080,
+        "damage": 12
+    },
+    "golden_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 630,
+        "damage": 8
+    },
+    "golden_trident": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 712,
+        "damage": 8
+    },
+    "ideal_altaite_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 128001,
+        "damage": 13
+    },
+    "iron_wide_heavy_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 210,
+        "damage": 6
+    },
+    "iron_wide_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 166,
+        "damage": 6
+    },
+    "long_steel_sword_with_draphorite_inlays": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 91020,
+        "damage": 13
+    },
+    "naginitis_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 50000,
+        "damage": 12
+    },
+    "naginitis_weighted_battleaxe": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 80000,
+        "damage": 13
+    },
+    "netherite_ripper": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 75000,
+        "damage": 13
+    },
+    "plumbum_axe": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 82,
+        "damage": 5
+    },
+    "plumbum_heighted_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 161,
+        "damage": 6
+    },
+    "plumbum_lighted_small_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 145,
+        "damage": 6
+    },
+    "plumbum_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 241,
+        "damage": 6
+    },
+    "plumbum_small_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 120,
+        "damage": 6
+    },
+    "plumbum_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 123,
+        "damage": 6
+    },
+    "sacrificial_iron_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 2845,
+        "damage": 9
+    },
+    "simple_iron_axe": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 73,
+        "damage": 5
+    },
+    "simple_iron_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 141,
+        "damage": 6
+    },
+    "simple_iron_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 106,
+        "damage": 6
+    },
+    "steel_battleaxe": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 2040,
+        "damage": 9
+    },
+    "steel_big_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1021,
+        "damage": 8
+    },
+    "steel_crossword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1046,
+        "damage": 8
+    },
+    "steel_heavy_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1531,
+        "damage": 9
+    },
+    "steel_light_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1276,
+        "damage": 8
+    },
+    "steel_longsword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1531,
+        "damage": 9
+    },
+    "steel_longsword_with_copper_guard": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 524,
+        "damage": 7
+    },
+    "steel_mace": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1020,
+        "damage": 8
+    },
+    "steel_saber": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1021,
+        "damage": 8
+    },
+    "steel_simple_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1021,
+        "damage": 8
+    },
+    "steel_sword_with_copper_guard": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 517,
+        "damage": 7
+    },
+    "steel_sword_with_golden_guard": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 570,
+        "damage": 7
+    },
+    "steel_weighted_sword": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 1786,
+        "damage": 9
+    },
+    "stone_longsword": {
+        "type": "light_longsword",
+        "has_recipe": false
+    },
+    "tin_curved_saber": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 120,
+        "damage": 6
+    },
+    "tin_small_battleaxe": {
+        "type": "light_longsword",
+        "has_recipe": true,
+        "raw_cost": 200,
+        "damage": 6
+    },
+    "wooden_battleaxe": {
+        "type": "light_longsword",
+        "has_recipe": false
+    },
+    "wooden_carved_sword": {
+        "type": "light_longsword",
+        "has_recipe": false
+    },
+    "wooden_longsword": {
+        "type": "light_longsword",
+        "has_recipe": false
+    },
+    "wooden_one_sided_sword": {
+        "type": "light_longsword",
+        "has_recipe": false
+    },
+    "wooden_simple_sword": {
+        "type": "light_longsword",
+        "has_recipe": false
+    },
+    "wooden_wide_sword": {
+        "type": "light_longsword",
+        "has_recipe": false
+    },
+    "scythe_altaite": {
+        "type": "scythe",
+        "has_recipe": true,
+        "raw_cost": 64050,
+        "damage": 13
+    },
+    "scythe_caryite": {
+        "type": "scythe",
+        "has_recipe": true,
+        "raw_cost": 120000,
+        "damage": 13
+    },
+    "scythe_chloronite": {
+        "type": "scythe",
+        "has_recipe": true,
+        "raw_cost": 120000,
+        "damage": 13
+    },
+    "scythe_forfacorite": {
+        "type": "scythe",
+        "has_recipe": true,
+        "raw_cost": 104000,
+        "damage": 13
+    },
+    "scythe_naginitis": {
+        "type": "scythe",
+        "has_recipe": true,
+        "raw_cost": 60360,
+        "damage": 13
+    },
+    "scythe_netherite": {
+        "type": "scythe",
+        "has_recipe": true,
+        "raw_cost": 105000,
+        "damage": 13
+    },
+    "scythe_steel": {
+        "type": "scythe",
+        "has_recipe": true,
+        "raw_cost": 1675,
+        "damage": 9
+    },
+    "scythe_tin": {
+        "type": "scythe",
+        "has_recipe": true,
+        "raw_cost": 160,
+        "damage": 6
+    },
+    "scythe_toliriite": {
+        "type": "scythe",
+        "has_recipe": true,
+        "raw_cost": 144000,
+        "damage": 13
+    },
+    "staff_battle": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 156080,
+        "damage": 14
+    },
+    "staff_battle_custom_magik": {
+        "type": "staff",
+        "has_recipe": false
+    },
+    "staff_caryite": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 112000,
+        "damage": 13
+    },
+    "staff_cast_iron_with_chrysolite": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 480,
+        "damage": 7
+    },
+    "staff_chloronite": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 92510,
+        "damage": 13
+    },
+    "staff_chrysolite": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 1620,
+        "damage": 9
+    },
+    "staff_dark_netherite": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 112300,
+        "damage": 13
+    },
+    "staff_din": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 172000,
+        "damage": 14
+    },
+    "staff_dorionite": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 112000,
+        "damage": 13
+    },
+    "staff_dorionite_with_caryite": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 112000,
+        "damage": 13
+    },
+    "staff_dragon": {
+        "type": "staff",
+        "has_recipe": false
+    },
+    "staff_fulminant": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 180720,
+        "damage": 14
+    },
+    "staff_gold": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 250,
+        "damage": 7
+    },
+    "staff_golden_cross": {
+        "type": "staff",
+        "has_recipe": false
+    },
+    "staff_golden_with_chrysolite": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 950,
+        "damage": 8
+    },
+    "staff_golden_with_sapphire": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 950,
+        "damage": 8
+    },
+    "staff_golden_with_violet_handle": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 395,
+        "damage": 7
+    },
+    "staff_kon": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 152718,
+        "damage": 14
+    },
+    "staff_naginitis": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 40200,
+        "damage": 12
+    },
+    "staff_netherite_with_ruby": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 112200,
+        "damage": 13
+    },
+    "staff_of_angel": {
+        "type": "staff",
+        "has_recipe": false
+    },
+    "staff_of_forest": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 616,
+        "damage": 8
+    },
+    "staff_of_heaven": {
+        "type": "staff",
+        "has_recipe": false
+    },
+    "staff_of_hell": {
+        "type": "staff",
+        "has_recipe": false
+    },
+    "staff_of_phoenix": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 710,
+        "damage": 8
+    },
+    "staff_of_scarlet_moon": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 61400,
+        "damage": 13
+    },
+    "staff_of_shaman": {
+        "type": "staff",
+        "has_recipe": false
+    },
+    "staff_of_snowlands": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 116200,
+        "damage": 13
+    },
+    "staff_of_twilight": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 82300,
+        "damage": 13
+    },
+    "staff_precious": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 683,
+        "damage": 8
+    },
+    "staff_san": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 152310,
+        "damage": 14
+    },
+    "staff_simple_with_ruby": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 540,
+        "damage": 7
+    },
+    "staff_sin": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 152218,
+        "damage": 14
+    },
+    "staff_steel_with_topaz": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 1220,
+        "damage": 8
+    },
+    "staff_tin_with_gold": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 281,
+        "damage": 7
+    },
+    "staff_with_diamond": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 460,
+        "damage": 7
+    },
+    "staff_with_ruby": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 576,
+        "damage": 7
+    },
+    "staff_with_skull": {
+        "type": "staff",
+        "has_recipe": false
+    },
+    "staff_wooden": {
+        "type": "staff",
+        "has_recipe": false
+    },
+    "staff_wooden_with_chrysolite": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 202,
+        "damage": 6
+    },
+    "staff_wooden_with_riolik": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 202,
+        "damage": 6
+    },
+    "vicious_staff": {
+        "type": "staff",
+        "has_recipe": false
+    },
+    "vicious_staff_refined": {
+        "type": "staff",
+        "has_recipe": true,
+        "raw_cost": 200220,
+        "damage": 14
+    },
+    "bronze_and_caryite_axe": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 60472,
+        "damage": 13
+    },
+    "bronze_and_gold_alloy_battleaxe": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 1584,
+        "damage": 9
+    },
+    "bronze_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 1180,
+        "damage": 8
+    },
+    "bronze_crusher_with_cornelian": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 1380,
+        "damage": 8
+    },
+    "bronze_hammer": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 1416,
+        "damage": 8
+    },
+    "caryite_and_toliriite_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 134720,
+        "damage": 13
+    },
+    "caryite_and_toliriite_wide_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 132200,
+        "damage": 13
+    },
+    "caryite_delimiter": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 121360,
+        "damage": 13
+    },
+    "caryite_sword_with_sapphire": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 60200,
+        "damage": 13
+    },
+    "cast_iron_battleaxe_with_chloronite_inlays": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 40560,
+        "damage": 12
+    },
+    "cast_iron_greatsword": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 1260,
+        "damage": 8
+    },
+    "cast_iron_hammer_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 560,
+        "damage": 7
+    },
+    "cast_iron_heavy_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 841,
+        "damage": 8
+    },
+    "cast_netherite_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 120800,
+        "damage": 13
+    },
+    "chloronite_big_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 80280,
+        "damage": 13
+    },
+    "clear_caryite_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 210000,
+        "damage": 14
+    },
+    "clear_dorionite_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 120080,
+        "damage": 13
+    },
+    "composite_toothed_sawsword": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "delimiter": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "dorionite_battleaxe": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 91080,
+        "damage": 13
+    },
+    "dorionite_dismantler": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 120080,
+        "damage": 13
+    },
+    "dorionite_megahammer": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 180160,
+        "damage": 14
+    },
+    "dorionite_powered_battleaxe": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 91080,
+        "damage": 13
+    },
+    "dorionite_ripper": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 150080,
+        "damage": 14
+    },
+    "draphorite_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "duraluminium_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 2230,
+        "damage": 9
+    },
+    "duraluminium_delimiter": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 1800,
+        "damage": 9
+    },
+    "duraluminium_dismantler_with_draphorite_inlays": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 91440,
+        "damage": 13
+    },
+    "duraluminium_sword_with_draphorite_inlays": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 91440,
+        "damage": 13
+    },
+    "durasteel_extreme_long_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "durasteel_wide_greatsword": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "elder_battleboard": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "elder_white_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "flesh_hell_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "harbinger_of_dawn": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "heavy_axe_with_chloronite_inlays": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 120000,
+        "damage": 13
+    },
+    "lamenite_megahammer": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 630000,
+        "damage": 15
+    },
+    "leave_axe": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "netherite_blade": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 105000,
+        "damage": 13
+    },
+    "netherite_bonecrusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 150240,
+        "damage": 14
+    },
+    "petrified_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "ravensword": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "red_crystal_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 37600,
+        "damage": 12
+    },
+    "red_crystal_heavy_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 73000,
+        "damage": 13
+    },
+    "steel_chorper": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 581,
+        "damage": 7
+    },
+    "steel_extreme_heavy_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "steel_heavy_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 2160,
+        "damage": 9
+    },
+    "steel_heavy_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 1531,
+        "damage": 9
+    },
+    "steel_longsword_with_altaite_inlays": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "toliriite_cutter": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 108140,
+        "damage": 13
+    },
+    "toliriite_ripper": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 72147,
+        "damage": 13
+    },
+    "wide_cross_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": false
+    },
+    "wooden_heavy_sword": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 22,
+        "damage": 4
+    },
+    "wooden_very_heavy_crusher": {
+        "type": "very_heavy_sword",
+        "has_recipe": true,
+        "raw_cost": 13,
+        "damage": 3
+    },
+    "wand_altaite": {
+        "has_recipe": true,
+        "raw_cost": 32520,
+        "damage": 12
+    },
+    "wand_dragon": {
+        "has_recipe": false
+    },
+    "wand_duo": {
+        "has_recipe": false
+    },
+    "wand_flame": {
+        "has_recipe": true,
+        "raw_cost": 2411,
+        "damage": 9
+    },
+    "wand_gf_neth_rod": {
+        "has_recipe": true,
+        "raw_cost": 30810,
+        "damage": 12
+    },
+    "wand_gf_neth_wood": {
+        "has_recipe": true,
+        "raw_cost": 30035,
+        "damage": 12
+    },
+    "wand_iron": {
+        "has_recipe": true,
+        "raw_cost": 80,
+        "damage": 5
+    },
+    "wand_naginitis": {
+        "has_recipe": true,
+        "raw_cost": 20090,
+        "damage": 11
+    },
+    "wand_of_darkness": {
+        "has_recipe": true,
+        "raw_cost": 1040,
+        "damage": 8
+    },
+    "wand_pine_and_neth": {
+        "has_recipe": true,
+        "raw_cost": 30013,
+        "damage": 12
+    },
+    "wand_sakura": {
+        "has_recipe": true,
+        "raw_cost": 150,
+        "damage": 6
+    },
+    "wand_tironite_butterfly": {
+        "has_recipe": true,
+        "raw_cost": 36035,
+        "damage": 12
+    },
+    "wand_twisted": {
+        "has_recipe": false
+    },
+    "wand_white": {
+        "has_recipe": false
+    },
+    "wand_wooden": {
+        "has_recipe": true,
+        "raw_cost": 2,
+        "damage": 1
+    },
+    "wand_wooden_broken": {
+        "has_recipe": false
+    }
+}
