@@ -11,19 +11,22 @@
     "lance": {
         "damage_multiplier": 0.8
     },
-    "light_longsword": {
+    "long_sword": {
         "damage_multiplier": 0.8
     },
     "scythe": {
-        "damage_multiplier": 0.5
+        "damage_multiplier": 0.65
     },
     "staff": {
-        "damage_multiplier": 0.3
+        "damage_multiplier": 0.45
     },
-    "very_heavy_sword": {
-        "damage_multiplier": 1.2
+    "hheavy_sword": {
+        "damage_multiplier": 1.15
     },
     "wand": {
+        "damage_multiplier": 0.1
+    },
+    "arxaco": {
         "damage_multiplier": 0.1
     }
 }

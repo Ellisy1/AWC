@@ -1,17 +1,54 @@
-import os # Импорт библиотек
+# Импорт библиотек
+import os 
 import json
 import math
 
 
 
+def get_crafts_list() -> list:
+    """Эта функция создает список, содержащий названия всех существующих крафтов оружий"""
+    crafts_list = [] # Создаем список для названий крафтов оружий. Он нужен, чтобы быстро определить, есть ли у оружия крафт или нет.
+    for root, dirs, files in os.walk(abs_path_to_weapon_recipes): # Получаем список всех крафтов в crafts_list. Данные имеют формат простого списка с названием файлов
+        for file in files:
+            crafts_list.append(file[:-5])
+    if crafts_list:
+        return crafts_list
+    else:
+        raise ValueError(f'Ошибка при создании списка крафтов: он получился пустой. Проверьте директорию крафтов {abs_path_to_weapon_recipes}')
+
+
+def create_json_dict_visualization_file(weapons_dict_for_output: dict) -> None:
+    """Создаем вспомогательный файл со всеми собранными данными output/data.json. По сути это просто визуализация словаря оружия для удобства."""
+    with open('output/data.json', 'w') as json_result: 
+        json.dump(weapons_dict_for_output, json_result, indent = 4)
+
+
+
 def read_weapon_types_data(weapon_types_data_file: str) -> dict:
-    """Считываем данные из существующего файла, в котором представлен словарь с типами оружия и некоторыми их характеристиками"""
-    if os.path.exists(weapon_types_data_file):
+    """Считываем данные из существующего файла, в котором представлен словарь с типами оружия Аркса и некоторыми их характеристиками."""
+    try:
         with open(weapon_types_data_file, "r", encoding="utf-8") as file:
-            return json.load(file)
-    else: 
-        print(f'Файла {weapon_types_data_file} не существует!')
-        exit()
+            data = json.load(file)
+            return data
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Файл с данными о типах оружия не найден: {weapon_types_data_file}")
+    except json.JSONDecodeError:
+        raise ValueError(f"Ошибка при разборе JSON в файле: {weapon_types_data_file}")
+
+
+
+def define_weapon_type(weapon: dict, weapons_dict: dict, weapon_file: str = None):
+    """Функция определяет тип оружия. На вход получает словарь конкретного оружия, общий словарь оружия и название файла оружия"""
+    weapon_type_is_unknown = True
+    for weapon_type in weapon_types_dict:
+        if f"tag:is_{weapon_type}" in weapon["minecraft:item"]["components"]:
+            weapon_type_is_unknown = False
+            weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['type'] = weapon_type
+            break
+        
+    if weapon_type_is_unknown: # Если нет совпадения ни с одним известным типом оружия
+        weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['type'] = 'unknown'
+        print(f'Не получилось опознать тип оружия {weapon_file}')
 
 
 
@@ -20,63 +57,35 @@ def create_weapons_data_dict() -> dict:
 
     weapons_dict: dict = {} # Словарь который мы получаем в return
 
-    crafts_list = []
-    
-    for root, dirs, files in os.walk(abs_path_to_weapon_recipes): # Получаем список всех крафтов
-        for file in files:
-            crafts_list.append(file[:-5])
+    weapon_files_counter = 0 # Счетчик файлов оружия. Нужен, чтобы по факту выполнения кода сосчитать количество единиц оружия
 
-    weapon_files_counter = 0 # Счетчик файлов оружия
-
-    for root, dirs, files in os.walk(abs_path_to_weapons): # Вносим ID из названий файлов
+    for root, dirs, files in os.walk(abs_path_to_weapons):
         for file in files: # Цикл для каждого отдельного json-файла оружия
 
-            weapon_files_counter += 1
-            file_path = os.path.join(root, file) 
-            with open(file_path, 'r', encoding='utf-8') as json_file: 
-                data = json.load(json_file) # Создаем словарь для каждого файла оружия
+            weapon_files_counter += 1 # Увеличиваем счетчик файлов оружия
+            with open(os.path.join(root, file), 'r', encoding='utf-8') as json_file: 
+                weapon = json.load(json_file) # Создаем словарь для каждого файла оружия
 
                 # Везде далее мы используем срез строки, чтобы убрать пространство имен arx:, так как оно здесь не нужно
-                weapons_dict[data['minecraft:item']['description']['identifier'][4:]] = {} # Создаем пустой подсловарь для каждого файла в указаной выше директории
+                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]] = {} # Создаем пустой подсловарь для каждого оружия (в общем словаре, который пойдет в return)
 
+                # === Обработка типа оружия === #
+                define_weapon_type(weapon, weapons_dict, file)
 
-                try: # Тип
-                    if   any('is_dagger' in block for block in data['minecraft:item']['events']['hurt']['run_command']['command']): weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['type'] = 'dagger' # Кинжал
-                    elif any('is_default' in block for block in data['minecraft:item']['events']['hurt']['run_command']['command']): weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['type'] = 'default_sword' # Обычный меч
-                    elif any('is_heavy' in block for block in data['minecraft:item']['events']['hurt']['run_command']['command']): weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['type'] = 'heavy_sword' # Тяжёлый меч
-                    elif any('is_lance' in block for block in data['minecraft:item']['events']['hurt']['run_command']['command']): weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['type'] = 'lance' # Древка
-                    elif any('is_long' in block for block in data['minecraft:item']['events']['hurt']['run_command']['command']): weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['type'] = 'light_longsword' # Легкий двуруч  
-                    elif any('is_scythe' in block for block in data['minecraft:item']['events']['hurt']['run_command']['command']): weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['type'] = 'scythe' # Коса
-                    elif any('is_staff' in block for block in data['minecraft:item']['events']['hurt']['run_command']['command']): weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['type'] = 'staff' # Посох             
-                    elif any('is_very_heavy' in block for block in data['minecraft:item']['events']['hurt']['run_command']['command']): weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['type'] = 'very_heavy_sword' # Сверхтяж
-                    elif any('is_wand' in block for block in data['minecraft:item']['events']['hurt']['run_command']['command']): weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['type'] = 'wand' # Волшебная палочка
-                    else: weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['type'] = 'unknown'
-
-                except Exception:
-                    print(f"Не удалось определить тип оружия для {file}")
-
-
-                if data['minecraft:item']['description']['identifier'][4:] not in crafts_list:
-                    weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['has_recipe'] = False
+                # === Обработка рецепта === #
+                if weapon['minecraft:item']['description']['identifier'][4:] not in crafts_list: 
+                    weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_recipe'] = False
                 else:
                     for recipe_root, recipe_dirs, recipe_files in os.walk(abs_path_to_weapon_recipes): # Анализируем файл крафта
                         for recipe_file in recipe_files:
                             if file == recipe_file:
                                 cost = analyse_recipe_cost(os.path.join(recipe_root, recipe_file))
-                                weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['has_recipe'] = True
+                                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_recipe'] = True
+                                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['raw_cost'] = cost  # Присваиваем значение напрямую
+                                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['damage'] = round(math.log(cost, 2.5) * weapon_types_dict[weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['type']]["damage_multiplier"]) # Умножаем логарифм из стоимости оружия на множитель урона этого типа оружия
+                                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['durability'] = round(math.log(cost, 1.1))
 
-                                weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['raw_cost'] = cost  # Присваиваем значение напрямую
-
-                                weapons_dict[data['minecraft:item']['description']['identifier'][4:]]['damage'] = math.ceil(math.log(cost, 2.5))
-                                
-
-                    
-
-    print(str(weapon_files_counter) + ' json файлов оружий всего')
-
-    # Создаем вспомогательный файл со всеми собранными данными data.json. По сути это просто визуализация словаря для удобства
-    with open('output/data.json', 'w') as json_result: 
-        json.dump(weapons_dict, json_result, indent = 4)
+    print(str(weapon_files_counter) + ' json файлов оружий проанализировано')
 
     return weapons_dict
 
@@ -218,25 +227,37 @@ def analyse_recipe_cost(current_recipe_dir: str) -> int:
 
 def inbuild_new_weapon_values(weapons_dict: dict) -> None:
     """Эта функция полагается на составленный ранее словарь weapons_dict и изменяет файлы оружия в Арксе зависимо от его содержимого"""
+
+    weapon_files_counter = 0
     for key in weapons_dict:
         for root, paths, files in os.walk(abs_path_to_weapons):
             for file in files:
-                if file[:4] == key:
-                    print(file, key)
+                if file[:-5] == key:
                     try:
-                        with open(os.path.join(abs_path_to_weapons, ""), "r", encoding="utf-8") as weapon_file:
-                            pass
+                        with open(os.path.join(root, file), "r", encoding="utf-8") as weapon_file_r: # Открываем файл оружия в режиме чтения, чтобы загрузить из него данные
+                            weapon_files_counter += 1
+                            data = json.load(weapon_file_r)
+
+                            with open(os.path.join(root, file), "w", encoding="utf-8") as weapon_file_w: # Открываем файл оружия в режиме записи, чтобы привнести в него изменения
+                                if 'damage' in weapons_dict[key]:
+                                    data['minecraft:item']['components']['minecraft:damage'] = weapons_dict[key]['damage']
+                                
+                                json.dump(data, weapon_file_w, indent = 4)
+
                     except Exception as e:
-                        print(f"Ошибка при открытии файла оружия <{key}>: {e}")
-        
+                        print(f"[Перестройка файлов оружия] Ошибка при открытии файла оружия <{key}>: {e}")
+    
+    print(f'{weapon_files_counter} файлов оружий откорректировано')
+
     return None
 
 
-# === # Начало программы # === #
+
+# === # НАЧАЛО ПРОГРАММЫ # === #
+
 
 
 os.chdir(os.path.dirname(os.path.abspath(__file__))) # Устанавливаем путь выполнения кода
-print('=====')
 
 # Определяем пути
 # Общий путь
@@ -252,8 +273,11 @@ else: print(f'Ошибка при инициализации абсолютно�
 if os.path.exists(os.path.join(path_to_bps, loc_path_to_weapon_recipes)): abs_path_to_weapon_recipes = os.path.join(path_to_bps, loc_path_to_weapon_recipes)
 else: print(f'Ошибка при инициализации абсолютного пути для {loc_path_to_weapon_recipes}')
 
+# Получаем список названий существующих крафтов оружия
+crafts_list = get_crafts_list()
+
 # Читаем данные о типах оружия
-weapon_types_data = read_weapon_types_data("assets/weapon_types.json")
+weapon_types_dict = read_weapon_types_data("assets/weapon_types.json")
 
 # Создаем словарь со всем существующем оружием
 weapons_dict = create_weapons_data_dict() 
@@ -261,5 +285,7 @@ weapons_dict = create_weapons_data_dict()
 # Модифицируем файлы оружия в системе
 inbuild_new_weapon_values(weapons_dict) 
 
+# Создаем визуализацию словаря
+create_json_dict_visualization_file(weapons_dict)
 
 print('Работа AWC успешно завершена.')
