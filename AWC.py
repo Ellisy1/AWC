@@ -72,18 +72,28 @@ def create_weapons_data_dict() -> dict:
                 # === Обработка типа оружия === #
                 define_weapon_type(weapon, weapons_dict, file)
 
-                # === Обработка рецепта === #
-                if weapon['minecraft:item']['description']['identifier'][4:] not in crafts_list: 
-                    weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_recipe'] = False
-                else:
+                # === Анализ стоимости === #
+                cost = 0
+                if weapon['minecraft:item']['description']['identifier'][4:] in crafts_list: # Если есть рецепт
                     for recipe_root, recipe_dirs, recipe_files in os.walk(abs_path_to_weapon_recipes): # Анализируем файл крафта
-                        for recipe_file in recipe_files:
-                            if file == recipe_file:
+                        for recipe_file in recipe_files: # Пускаем цикл по каждому файлу оружия (название.json)
+                            if file == recipe_file: # Проверяем каждый крафт в Арксе, нужный ли это крафт
                                 cost = analyse_recipe_cost(os.path.join(recipe_root, recipe_file))
+
                                 weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_recipe'] = True
-                                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['raw_cost'] = cost  # Присваиваем значение напрямую
-                                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['damage'] = round(math.log(cost, 2.5) * weapon_types_dict[weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['type']]["damage_multiplier"]) # Умножаем логарифм из стоимости оружия на множитель урона этого типа оружия
-                                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['durability'] = round(math.log(cost, 1.1))
+                    
+                else:
+                    for key in weapon['minecraft:item']['components']:
+                        if key.startswith('tag:raw_cost'):
+                            cost = int(key[13:])
+                        
+
+                if cost: # Ставим остальные характеристики оружия зависимо от полученной ранее стоимости
+                    weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['raw_cost'] = cost  # Присваиваем значение напрямую
+                    weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['damage'] = round(math.log(cost, 2.5) * weapon_types_dict[weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['type']]["damage_multiplier"]) # Умножаем логарифм из стоимости оружия на множитель урона этого типа оружия
+                    weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['durability'] = round(math.log(cost, 1.005)) - 400 if round(math.log(cost, 1.005)) - 400 > 10 else 10
+                else:
+                    print(f'Warning: для оружия {weapon['minecraft:item']['description']['identifier'][4:]} нет определения сырой стоимости')
 
     print(str(weapon_files_counter) + ' json файлов оружий проанализировано')
 
@@ -239,15 +249,18 @@ def inbuild_new_weapon_values(weapons_dict: dict) -> None:
                             data = json.load(weapon_file_r)
 
                             with open(os.path.join(root, file), "w", encoding="utf-8") as weapon_file_w: # Открываем файл оружия в режиме записи, чтобы привнести в него изменения
-                                if 'damage' in weapons_dict[key]:
+                                if 'damage' in weapons_dict[key]: # Устанавливаем урон
                                     data['minecraft:item']['components']['minecraft:damage'] = weapons_dict[key]['damage']
+
+                                if 'damage' in weapons_dict[key]: # Устанавливаем прочность
+                                    data['minecraft:item']['components']['minecraft:durability']['max_durability'] = weapons_dict[key]['durability']
                                 
                                 json.dump(data, weapon_file_w, indent = 4)
 
                     except Exception as e:
                         print(f"[Перестройка файлов оружия] Ошибка при открытии файла оружия <{key}>: {e}")
     
-    print(f'{weapon_files_counter} файлов оружий откорректировано')
+    print(f'{weapon_files_counter} файлов оружий откорректировано') 
 
     return None
 
