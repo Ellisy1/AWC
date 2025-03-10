@@ -1,7 +1,36 @@
 # Импорт библиотек
-import os 
+import os
 import json
 import math
+import shutil
+
+
+
+def create_directory(directory_path):
+    try:
+        # Создаем директорию, если она не существует
+        os.makedirs(directory_path, exist_ok=True)
+        print(f"Директория '{directory_path}' успешно создана.")
+    except Exception as e:
+        print(f"\033[31mОшибка при создании директории: {e}")
+
+def clear_directory(directory_path):
+    """Функция призвана очистить директорию. На вход получает строковой объект path"""
+    # Проверяем, существует ли директория
+    if os.path.exists(directory_path) and os.path.isdir(directory_path):
+        # Проходим по всем файлам и подкаталогам в директории
+        for filename in os.listdir(directory_path):
+            file_path = os.path.join(directory_path, filename)
+
+            # Если это файл, удаляем его
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+                print(f"Удалён файл: {file_path}")
+
+            # Если это директория, удаляем её вместе с содержимым
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+                print(f"Удалена директория: {file_path}")
 
 
 
@@ -15,6 +44,7 @@ def get_crafts_list() -> list:
         return crafts_list
     else:
         raise ValueError(f'Ошибка при создании списка крафтов: он получился пустой. Проверьте директорию крафтов {abs_path_to_weapon_recipes}')
+
 
 
 def create_json_dict_visualization_file(weapons_dict_for_output: dict) -> None:
@@ -41,14 +71,14 @@ def define_weapon_type(weapon: dict, weapons_dict: dict, weapon_file: str = None
     """Функция определяет тип оружия. На вход получает словарь конкретного оружия, общий словарь оружия и название файла оружия"""
     weapon_type_is_unknown = True
     for weapon_type in weapon_types_dict:
-        if f"tag:is_{weapon_type}" in weapon["minecraft:item"]["components"]:
+        if f"is_{weapon_type}" in weapon["minecraft:item"]["components"]["minecraft:tags"]["tags"]:
             weapon_type_is_unknown = False
             weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['type'] = weapon_type
             break
         
     if weapon_type_is_unknown: # Если нет совпадения ни с одним известным типом оружия
         weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['type'] = 'unknown'
-        print(f'Не получилось опознать тип оружия {weapon_file}')
+        raise TypeError(f'Не получилось опознать тип оружия {weapon_file}')
 
 
 
@@ -72,7 +102,7 @@ def create_weapons_data_dict() -> dict:
                 # === Обработка типа оружия === #
                 define_weapon_type(weapon, weapons_dict, file)
 
-                # === Анализ стоимости === #
+                # === Анализ стоимости через крафт === #
                 cost = 0
                 if weapon['minecraft:item']['description']['identifier'][4:] in crafts_list: # Если есть рецепт
                     for recipe_root, recipe_dirs, recipe_files in os.walk(abs_path_to_weapon_recipes): # Анализируем файл крафта
@@ -82,18 +112,40 @@ def create_weapons_data_dict() -> dict:
 
                                 weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_recipe'] = True
                     
-                else:
-                    for key in weapon['minecraft:item']['components']:
-                        if key.startswith('tag:raw_cost'):
-                            cost = int(key[13:])
-                        
+                else: # Крафта нет
+                    weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_recipe'] = False
 
-                if cost: # Ставим остальные характеристики оружия зависимо от полученной ранее стоимости
-                    weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['raw_cost'] = cost  # Присваиваем значение напрямую
-                    weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['damage'] = round(math.log(cost, 2.5) * weapon_types_dict[weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['type']]["damage_multiplier"]) # Умножаем логарифм из стоимости оружия на множитель урона этого типа оружия
-                    weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['durability'] = round(math.log(cost, 1.005)) - 400 if round(math.log(cost, 1.005)) - 400 > 10 else 10
-                else:
-                    print(f'Warning: для оружия {weapon['minecraft:item']['description']['identifier'][4:]} нет определения сырой стоимости')
+                # === Анализ стоимости через прямое указание в beh файле оружия === #
+                found_raw_cost_direct_definition = False
+                for key in weapon['minecraft:item']['components']: # Пытаемся определить стоимость оружия (по компоненту "tag:raw_cost:int": {})
+                    if key.startswith('tag:raw_cost'): # Нашли компонент, ответственный за сырую стоимость
+                        found_raw_cost_direct_definition = True
+                        cost = int(key[13:])
+                        weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_raw_cost_direct_definition'] = True
+                
+                if not found_raw_cost_direct_definition:
+                    weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_raw_cost_direct_definition'] = False
+
+            # === # Делаем проверку # === #
+
+            # Выносим идентефикатор айтема для того, чтобы было удобно встраивать f-строки
+            item_identifier = weapon['minecraft:item']['description']['identifier'][4:]
+
+            # Есть и рецепт, и сырая стоимость
+            if weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_raw_cost_direct_definition'] == True and weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_recipe'] == True:
+                print(f'\033[93mПредупреждение: для оружия {item_identifier} указаны и крафт, и сырая стоимость. Рекомендуется убрать одно.\033[0m')
+
+            # Ни рецепта, ни прямого указания сырой стоимости
+            if weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_raw_cost_direct_definition'] == False and weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['has_recipe'] == False:
+                print(f'\033[93mПредупреждение: для оружия {item_identifier} нет ни крафта, ни прямого указания сырой стоимости. Добавьте хотя бы одно.\033[0m')
+
+            # === Рассчитываем статы === #
+            if cost: # Ставим остальные характеристики оружия зависимо от полученной ранее стоимости
+                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['raw_cost'] = cost  # Присваиваем значение напрямую
+                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['damage'] = round(math.log(cost, 2.5) * weapon_types_dict[weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['type']]["damage_multiplier"]) # Умножаем логарифм из стоимости оружия на множитель урона этого типа оружия
+                weapons_dict[weapon['minecraft:item']['description']['identifier'][4:]]['durability'] = round(math.log(cost, 1.005)) - 400 if round(math.log(cost, 1.005)) - 400 > 10 else 10
+            else:
+                print(f'\033[91mПроблема: для оружия {item_identifier} нет определения стоимости!\033[0m')
 
     print(str(weapon_files_counter) + ' json файлов оружий проанализировано')
 
@@ -224,9 +276,11 @@ def analyse_recipe_cost(current_recipe_dir: str) -> int:
             elif recipe_items_dict[craft_string[i]] == "minecraft:bone": result_cost += 2
             elif recipe_items_dict[craft_string[i]] == "arx:essence_of_vicious_demon": result_cost += 2000
 
-            elif recipe_items_dict[craft_string[i]] == "arx:vicious_dagger": result_cost += 10000
-            elif recipe_items_dict[craft_string[i]] == "arx:vicious_lance": result_cost += 10000
-            elif recipe_items_dict[craft_string[i]] == "arx:vicious_staff": result_cost += 10000
+            elif recipe_items_dict[craft_string[i]] == "arx:vicious_dagger": result_cost += 20000
+            elif recipe_items_dict[craft_string[i]] == "arx:vicious_lance": result_cost += 20000
+            elif recipe_items_dict[craft_string[i]] == "arx:vicious_staff": result_cost += 20000
+
+            elif recipe_items_dict[craft_string[i]] == "minecraft:magma_cream": result_cost += 100
             
 
             else: print(recipe_items_dict[craft_string[i]], "неопознаный ингредиент в рецепте!")
@@ -292,6 +346,10 @@ crafts_list = get_crafts_list()
 # Читаем данные о типах оружия
 weapon_types_dict = read_weapon_types_data("assets/weapon_types.json")
 
+# Обновляем дерево директорий output
+clear_directory("output")
+create_directory("output")
+
 # Создаем словарь со всем существующем оружием
 weapons_dict = create_weapons_data_dict() 
 
@@ -301,4 +359,5 @@ inbuild_new_weapon_values(weapons_dict)
 # Создаем визуализацию словаря
 create_json_dict_visualization_file(weapons_dict)
 
-print('Работа AWC успешно завершена.')
+# Отчёт о завершении
+print('\033[92mРабота AWC завершена.')
